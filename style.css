@@ -398,8 +398,6 @@ header {
   border: 7px solid transparent;
   border-bottom-width: 0px;
   border-right-width: 0px;
-  border-top-style: #f0f0f0;
-  border-top-color: #f0f0f0;
 }
 
 .bar .progress-line span::after {
@@ -415,21 +413,30 @@ header {
 }
 
 
-.progress-line .html::after {
+.progress-line .html:hover::after {
   content: "50%";
 }
-.progress-line .css::after {
+.progress-line .css:hover::after {
   content: "40%";
 }
-.progress-line .javascript::after {
+.progress-line .javascript:hover::after {
   content: "30%";
 }
-.progress-line .Python::after {
+.progress-line .Python:hover::after {
   content: "50%";
 }
-.progress-line .Java::after {
+.progress-line .Java:hover::after {
   content: "10%";
 }
+
+/* .progress-line span:hover::before{
+  border-top-color: transparent;
+}
+
+.progress-line span:hover::after{
+  background: #07374a;
+  color: #f0f0f0;
+} */
 
 .navbar.solid {
   background-color: #07374a;
