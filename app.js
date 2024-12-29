@@ -37,3 +37,40 @@ $(document).ready(function () {
         } // End if
     });
 });
+
+function myFunction() {
+    const menuItems = document.querySelector(".menu-items");
+    if (menuItems.style.display === "block") {
+      menuItems.style.display = "none";
+    } else {
+      menuItems.style.display = "block";
+    }
+  }
+
+// auto-type js func
+document.addEventListener("DOMContentLoaded", () => {
+    const autoTypeElement = document.querySelector(".auto-type");
+    const text = ["Full Stack web developer", "JavaScript Enthusiast", "Creative Thinker"];
+    const typingSpeed = 100; // Speed of typing each letter
+    const delayBetweenWords = 1500; // Delay before typing the next word
+    let textIndex = 0;
+    let charIndex = 0;
+  
+    function typeText() {
+      if (charIndex < text[textIndex].length) {
+        autoTypeElement.textContent += text[textIndex].charAt(charIndex);
+        charIndex++;
+        setTimeout(typeText, typingSpeed);
+      } else {
+        setTimeout(() => {
+          autoTypeElement.textContent = "";
+          charIndex = 0;
+          textIndex = (textIndex + 1) % text.length;
+          typeText();
+        }, delayBetweenWords);
+      }
+    }
+  
+    typeText();
+  });
+  
