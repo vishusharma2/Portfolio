@@ -7,6 +7,7 @@
   <title>Portfolio Code</title>
   <link rel="stylesheet" href="style.css" />
   <script src="https://kit.fontawesome.com/66aa7c98b3.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"
     integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 </head>
@@ -14,26 +15,31 @@
 <body>
   <header class="header">
     <nav class="navbar" onmouseover="showNavbar()" onmouseout="hideNavbar()">
-      <div class="navbar-container container">
+      <div class="navbar-container container" id="hamburger-menu">
         <div>
           <h1 class="navbar-brand">Vishu Sharma</h1>
         </div>
         <ul class="menu-items">
           <li><a href="#about">About</a></li>
           <li><a href="#Education">Education</a></li>
-          <li><a href="#Achivement">Achivement</a></li>
+          <li><a href="#Achivement">Achievement</a></li>
           <li><a href="#my-works">Portfolio</a></li>
           <li><a href="#contact-me">Contact</a></li>
         </ul>
+        <!-- "Hamburger menu" / "Bar icon" to toggle the navigation links -->
+        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+          <i class="fa fa-bars"></i>
+        </a>
       </div>
     </nav>
+    
     <div class="home-content" id="home-page">
       <div class="name">
-        <h1>Hi, I'm Vishu Sharma</h1>
-        <p>Computer Science Engineer</p>
+        <h1 class="auto-type"></h1>
+        <p>Hi, I'm <span class="name-color"><b>Vishu Sharma</b></span></p>
       </div>
       <div class="angle-down-icon">
-        <a href="#about"><i class="fas fa-angle-down"></i></a>
+        <a href="#about"><img src="svg/arrow-down.svg" alt=""></a>
       </div>
     </div>
   </header>
@@ -51,7 +57,7 @@
           </p>
           <div class="work-arrow">
             <p>
-              <a href="#my-works">Check out my work <i class="fas fa-arrow-down"></i></a>
+              <a href="#my-works">Check out my work </a>
             </p>
           </div>
         </div>
@@ -103,14 +109,14 @@
     </div>
   </section>
   <section class="Edu" id="Education">
-    <h2 class="heading">My <span class="journey"> Journey</span></h2>
+    <h2 class="heading">My <span class="journey">Journey</span></h2>
     <div class="education-row">
         <div class="education-column">
             <h3 class="title">Education</h3>
             <div class="education-box">
                 <div class="education-content">
                     <div class="content">
-                        <div class="year"><img src="calendar3.svg" alt="SVG"> 2019-2020</div>
+                        <div class="year"><img src="svg/calendar3.svg" alt="SVG"> 2019-2020</div>
                         <h3>High School</h3>
                         <p>St. Mary's Christian School</p>
                     </div>
@@ -118,7 +124,7 @@
 
                 <div class="education-content">
                     <div class="content">
-                        <div class="year"><img src="calendar3.svg" alt="SVG"> 2020-2023</div>
+                        <div class="year"><img src="svg/calendar3.svg" alt="SVG"> 2020-2023</div>
                         <h3>Diploma</h3>
                         <h4>Government Polytechnic Sonipat</h4>
                         <p>Computer Science And engineering</p>
@@ -127,7 +133,7 @@
 
                 <div class="education-content">
                     <div class="content">
-                        <div class="year"><img src="calendar3.svg" alt="SVG"> 2023-2026</div>
+                        <div class="year"><img src="svg/calendar3.svg" alt="SVG"> 2023-2026</div>
                         <h3>Bachelor Of Technology</h3>
                         <h4>Greater Noida Institute Of Technology</h4>
                         <p>Computer Science And engineering</p>
@@ -141,9 +147,14 @@
             <div class="education-box">
                 <div class="education-content">
                     <div class="content">
-                        <div class="year"><img src="calendar3.svg" alt="SVG"> August 2022- October 2022</div>
+                        <div class="year"><img src="svg/calendar3.svg" alt="SVG"> August 2022- October 2022</div>
                         <h3>Softcrayons Tech Solution Pvt. ltd</h3>
                         <p>Python</p>
+                    </div>
+                    <div class="content">
+                        <div class="year"><img src="svg/calendar3.svg" alt="SVG"> May 2024 - June 2024</div>
+                        <h3>Ediglobe</h3>
+                        <p>Web Development</p>
                     </div>
                 </div>
             </div>
@@ -160,7 +171,7 @@
             <div class="Achivement-box">
                 <div class="Achivement-content">
                     <div class="content">
-                        <div class="year"><img src="calendar3.svg" alt="SVG"> October 2022</div>
+                        <div class="year"><img src="svg/calendar3.svg" alt="SVG"> October 2022</div>
                         <h3>Softcrayons Tech Solution Pvt. ltd.</h3>
                         <a class="cert1" href="https://drive.google.com/file/d/1wGsD-OsmYRCO03C9kRqp1YLTF_byGY5E/view">Python</a>
                     </div>
@@ -168,7 +179,7 @@
 
                 <div class="Achivement-content">
                     <div class="content">
-                        <div class="year"><img src="calendar3.svg" alt="SVG"> December 2022</div>
+                        <div class="year"><img src="svg/calendar3.svg" alt="SVG"> December 2022</div>
                         <h3>GUVI</h3>
                         <a class="cert2" href="https://www.guvi.in/certificate?id=r3bz2m53lV631G6722">Python</a>
                     </div>
@@ -176,7 +187,7 @@
 
                 <div class="Achivement-content">
                     <div class="content">
-                        <div class="year"><img src="calendar3.svg" alt="SVG"> December 2022</div>
+                        <div class="year"><img src="svg/calendar3.svg" alt="SVG"> December 2022</div>
                         <h3>CISCO</h3>
                         <a class="cert3" href="https://www.credly.com/badges/49dd8f83-97d4-4cf2-aa0d-fb35ad7dd818/linked_in_profile">Cybersecurity Essentials</a>
                     </div>
@@ -189,7 +200,7 @@
             <div class="Achivement-box">
                 <div class="Achivement-content">
                     <div class="content">
-                        <div class="year"><img src="calendar3.svg" alt="SVG">July 2023</div>
+                        <div class="year"><img src="svg/calendar3.svg" alt="SVG">July 2023</div>
                         <h3>Johns Hopkins University</h3>
                         <a class="cert3" href="https://www.coursera.org/account/accomplishments/verify/R47BL9GRAQVK?utm_source=link&utm_medium=certificate&utm_content=cert_image&utm_campaign=sharing_cta&utm_product=course">
                             Web Developer
@@ -201,7 +212,7 @@
             <div class="Achivement-box">
                 <div class="Achivement-content">
                     <div class="content">
-                        <div class="year"><img src="calendar3.svg" alt="SVG">August 2023</div>
+                        <div class="year"><img src="svg/calendar3.svg" alt="SVG">August 2023</div>
                         <h3>IBM</h3>
                         <a class="cert5" href="https://www.coursera.org/account/accomplishments/verify/4XZGAYBL4V2G?utm_source=link&utm_medium=certificate&utm_content=cert_image&utm_campaign=pdf_header_button&utm_product=course">
                             Introduction to Artificial Intelligence (AI)
@@ -240,20 +251,21 @@
       <div class="contact-content">
         <h2>Contact Me</h2>
         <p class="mail">
-          Get in touch with me <i class="fas fa-arrow-right"></i> vishu.sharma90861@gmail.com
+          Get in touch with me
         </p>
+        <p class="mail-div"><img src="svg/gmail.svg" alt="" class="mail1">vishu.sharma90861@gmail.com</p>
         <p class="links">Or find me on:</p>
-        <a href="https://www.linkedin.com/in/vishu-sharma-514560132/" target="blank"><i class="fab fa-linkedin">
-            Linkedin</i></a>
-        <a href="https://github.com/vishusharma2" target="blank"><i class="fab fa-github"></i> Github</a>
-        <a href="https://www.instagram.com/_vishu_sharma___/" target="blank"><i class="fab fa-instagram"></i> Instagram</a>
-        <a href="https://www.facebook.com/vishu.sharma.1441" target="blank"><i class="fab fa-Facebook"></i> Facebook</a>
+        <a href="https://www.linkedin.com/in/vishu-sharma-514560132/" target="blank"><img src="svg/linkedin.svg" alt=""></a>
+        <a href="https://github.com/vishusharma2" target="blank"><img src="svg/github.svg" alt=""></a>
+        <a href="https://www.instagram.com/_vishu_sharma___/" target="blank"><img src="svg/instagram.svg" alt=""></a>
+        <a href="https://www.facebook.com/vishu.sharma.1441" target="blank"><img src="svg/facebook.svg" alt=""></a>
       </div>
     </div>
   </div>
   <!-- JAVASCRIPT -->
   <script src="app.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
 </body>
 
 </html>
