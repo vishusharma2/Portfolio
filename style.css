@@ -10,8 +10,13 @@ body {
   font-family: "Poppins", sans-serif;
 }
 
+.name-color{
+  color: red;
+}
+
 header {
-  background-color: #25b79f;
+  background-color: #1A1A1D;
+  color: white;
   height: 100vh;
 }
 
@@ -21,12 +26,36 @@ header {
   margin: auto;
 }
 
+
+/* auto-typed content */
+.auto-type {
+  font-size: 2rem;
+  color: white
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 2px solid #333;
+  width: 100%;
+  display: inline-block;
+  animation: blink 0.7s step-end infinite;
+}
+
+@keyframes blink {
+  from, to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: #333;
+  }
+}
+
 /* ////........Navbar.......//// */
 
 .navbar {
   position: fixed;
   width: 100%;
   z-index: 500;
+  color: white;
+  background-color: black;
 }
 
 .navbar.active {
@@ -38,7 +67,26 @@ header {
   justify-content: space-between;
   align-items: center;
   height: 64px;
+  justify-content: center;
 }
+
+/* General styles for the navbar */
+.navbar-container .icon {
+  display: none; /* Hide the hamburger by default */
+}
+
+/* Media query for screens with width less than or equal to 768px */
+@media screen and (max-width: 768px) {
+  .navbar-container .menu-items {
+    display: none; /* Initially hide menu items on small screens */
+  }
+
+  .navbar-container .icon {
+    display: block; /* Show the hamburger menu icon */
+    cursor: pointer;
+  }
+}
+
 
 .menu-items {
   display: flex;
@@ -73,19 +121,18 @@ header {
   top: 47%;
   left: 50%;
   transform: translate(-50%, -50%);
-  color: #07374a;
   width: 100%;
   text-align: center;
 }
 
 .home-content .name h1 {
-  font-size: 2.2rem;
-  text-align: center;
+  font-size: 3rem;
+  /* text-align: center; */
 }
 
 .home-content .name p {
   color: #f0f0e6;
-  font-size: 1.5rem;
+  font-size: 2.0rem;
 }
 
 .angle-down-icon {
@@ -94,8 +141,6 @@ header {
   left: 50%;
   transform: translate(-50%, -50%);
   font-size: 2rem;
-  border: 3px solid #07374a;
-  border-radius: 50%;
 }
 
 .angle-down-icon a {
@@ -107,8 +152,9 @@ header {
 /* ////........About Me........//// */
 
 .about-me {
-  background-color: #07374a;
+  background-color: #14213d;
   padding: 6rem 0;
+  height: 100%;
 }
 
 .about-me .about-heading {
@@ -163,11 +209,16 @@ header {
     min-height: auto;
     padding-bottom: 5rem;
     padding-top: 5rem;
-    background-color: #25b79f;
+    background-color: #1A1A1D;
+    color: white;
 }
 
 .Edu .heading{
     font-size: 3rem;
+}
+
+.journey{
+  color: red;
 }
 
 
@@ -215,12 +266,17 @@ header {
     min-height: auto;
     padding-bottom: 5rem;
     padding-top: 5rem;
-    background-color: #25b79f;
+    background-color: #14213d;
+    color: red;
 }
 
 .Achiv .heading1{
     font-size: 3rem;
     color: white;
+}
+.Achiv .heading1 .ach{
+    font-size: 3rem;
+    color: red;
 }
 
 
@@ -240,7 +296,7 @@ header {
 .Achivement-column .title{
     font-size: 1.5rem;
     margin: 0 0 1.5rem 2rem;
-    color: #25b79f;
+    color: white;
 }
 
 .Achivement-column .Achivement-box{
@@ -481,13 +537,13 @@ header {
 /* ////.....Portfolio......///// */
 
 .portfolio {
-  background: #25b79f;
+  background: #1A1A1D;
   padding: 6rem 0;
 }
 
 .proj-heading h1 {
   text-align: center;
-  color: #07374a;
+  color: red;
   font-size: 2.3rem;
   font-weight: 700;
   margin: 3rem 0;
@@ -514,17 +570,17 @@ header {
 
 .proj-1 .proj1-details i {
   font-size: 1.5rem;
-  color: #07374a;
+  color: white;
 }
 
 .proj-1 .proj1-details h2 {
   font-size: 2rem;
-  color: #07374a;
+  color: white;
 }
 
 .proj-1 .proj1-details p {
   font-size: 1.3rem;
-  color: #07374a;
+  color: white;
   font-weight: 600;
 }
 
@@ -698,6 +754,17 @@ header {
 
 .contact-content a:hover {
   color: #f0f0e6;
+}
+
+.mail1{
+  padding-right: 10px;
+}
+
+.mail-div{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: red;
 }
 
 /* ////......Media query......//// */
@@ -897,4 +964,20 @@ h1{
   .header {
     height: 90vmax;
   }
+}
+
+.hamburger-menu {
+
+  display: none;
+
+}
+
+@media (max-width: 768px) {
+
+  .hamburger-menu {
+
+      display: block;
+
+  }
+
 }
