@@ -155,6 +155,7 @@ header {
   background-color: #14213d;
   padding: 6rem 0;
   height: 100%;
+  box-sizing: content-box;
 }
 
 .about-me .about-heading {
