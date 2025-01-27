@@ -442,7 +442,7 @@ header {
   width: 50%;
 }
 .progress-line .Java {
-  width: 10%;
+  width: 30%;
 }
 
 .bar .progress-line span::before {
@@ -483,7 +483,7 @@ header {
   content: "50%";
 }
 .progress-line .Java:hover::after {
-  content: "10%";
+  content: "30%";
 }
 
 /* .progress-line span:hover::before{
@@ -537,9 +537,11 @@ header {
 
 /* ////.....Portfolio......///// */
 
+
 .portfolio {
   background: #1A1A1D;
   padding: 6rem 0;
+  flex-wrap: wrap;
 }
 
 .proj-heading h1 {
@@ -550,42 +552,49 @@ header {
   margin: 3rem 0;
 }
 
-.proj-1 {
+.portfolio-content{
   display: flex;
+  height: 100%;
+  flex-wrap: wrap;
+}
+
+.proj-1 {
+  display: grid;
   justify-content: center;
   align-items: center;
+  height: fit-content;
+  width: fit-content;
+  padding-right: 40px;
+  padding: 15px;
+  grid-gap: 10px;
+  flex-wrap: wrap;
 }
 
 .proj-1 img {
-  height: 330px;
-  width: 380px;
+  height: 258px;
+  width: 345px;
   object-fit: cover;
-  border-radius: 50%;
+  border-radius: 5%;
   box-shadow: 0 20px 10px -10px rgb(37 41 52 / 31%);
-  margin-right: 1.7rem;
 }
 
-.proj-1 .proj1-details {
-  width: 32rem;
+
+.text {
+  text-align: center;
 }
 
-.proj-1 .proj1-details i {
-  font-size: 1.5rem;
-  color: white;
-}
-
-.proj-1 .proj1-details h2 {
+.heading {
   font-size: 2rem;
   color: white;
 }
 
-.proj-1 .proj1-details p {
+.paragraph {
   font-size: 1.3rem;
   color: white;
   font-weight: 600;
 }
 
-.proj-1 .proj1-details button {
+.portfolio-content .proj-1 .text button {
   background: #f0f0e6;
   padding: 0.5rem;
   margin-top: 0.5rem;
@@ -594,7 +603,7 @@ header {
   border-bottom: 2px solid #07374a;
 }
 
-.proj-1 .proj1-details button a {
+.portfolio-content .proj-1 .text button a {
   text-decoration: none;
   color: #07374a;
   font-size: 1.1rem;
@@ -603,89 +612,18 @@ header {
   transition: 0.3s ease-in-out;
 }
 
-.proj-1 .proj1-details button .fas {
+.portfolio-content .proj-1 .text button .fas {
   font-size: 0.7rem;
   padding: 0.3rem;
   transition: 0.2s ease-in-out;
 }
 
-.proj-1 .proj1-details button:hover {
+.portfolio-content .proj-1 .text button:hover {
   background: #07374a;
 }
 
-.proj-1 .proj1-details button:hover a,
-.proj-1 .proj1-details button:hover .fas {
-  color: #f0f0e6;
-}
-
-/* ////.....proj2.....//// */
-
-.proj-2 {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 3rem;
-}
-
-.proj-2 img {
-  height: 330px;
-  width: 380px;
-  object-fit: cover;
-  border-radius: 50%;
-  box-shadow: 0 20px 10px -10px rgb(37 41 52 / 31%);
-  margin-right: 1.7rem;
-}
-
-.proj-2 .proj2-details {
-  width: 32rem;
-}
-
-.proj-2 .proj2-details i {
-  font-size: 1.5rem;
-  color: #07374a;
-}
-
-.proj-2 .proj2-details h2 {
-  font-size: 2rem;
-  color: #07374a;
-}
-
-.proj-2 .proj2-details p {
-  font-size: 1.3rem;
-  color: #07374a;
-  font-weight: 600;
-}
-
-.proj-2 .proj2-details button {
-  background: #f0f0e6;
-  padding: 0.5rem;
-  margin-top: 0.5rem;
-  width: 150px;
-  border: none;
-  border-bottom: 2px solid #07374a;
-}
-
-.proj-2 .proj2-details button a {
-  text-decoration: none;
-  color: #07374a;
-  font-size: 1.1rem;
-  transition: 0.2s ease-in-out;
-  text-align: center;
-  transition: 0.3s ease-in-out;
-}
-
-.proj-2 .proj2-details button .fas {
-  font-size: 0.7rem;
-  padding: 0.3rem;
-  transition: 0.2s ease-in-out;
-}
-
-.proj-2 .proj2-details button:hover {
-  background: #07374a;
-}
-
-.proj-2 .proj2-details button:hover a,
-.proj-2 .proj2-details button:hover .fas {
+.portfolio-content .proj-1 .text button:hover a,
+.portfolio-content .proj-1 .text button:hover .fas {
   color: #f0f0e6;
 }
 
@@ -800,29 +738,41 @@ header {
     margin-top: 3.2rem;
   }
 
-  .proj-1 {
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
+  .proj-heading h1 {
+    font-size: 1.8rem; /* Scale down main heading */
+    margin: 2rem 0;
+  }
+
+  .portfolio {
+    padding: 4rem 1rem; /* Reduce padding */
   }
 
   .proj-1 img {
-    height: 230px;
-    width: 290px;
-    margin-bottom: 0.5rem;
+    height: 180px;
+    width: 100%; /* Full width for small screens */
+    max-width: 320px; /* Ensure it doesn't stretch too much */
   }
 
-  .proj-2 {
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
+  .text .heading {
+    font-size: 1.5rem;
   }
 
-  .proj-2 img {
-    height: 250px;
-    width: 290px;
-    margin-bottom: 0.5rem;
+  .paragraph {
+    font-size: 1rem;
   }
+
+  .portfolio-content .proj-1 .text button {
+    width: 100%; /* Full-width button */
+  }
+
+  .more-work p {
+    font-size: 1.2rem;
+  }
+
+  .more-work a {
+    font-size: 1rem;
+  }
+}
 
   .work-arrow-2 a {
     font-size: 1.3rem;
@@ -871,21 +821,10 @@ header {
     display: flex;
     justify-content: center;
     flex-direction: column;
+    height: fit-content;
   }
 
   .proj-1 img {
-    height: 240px;
-    width: 290px;
-    margin-bottom: 0.5rem;
-  }
-
-  .proj-2 {
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-  }
-
-  .proj-2 img {
     height: 240px;
     width: 290px;
     margin-bottom: 0.5rem;
@@ -961,6 +900,13 @@ h1{
     background-color: #07374a;
 }
 
+.portfolio-content {
+  align-items: center;
+  padding: 2rem;
+  height: fit-content;
+  justify-content: center;
+}
+
 @media (orientation: landscape) and (max-height: 500px) {
   .header {
     height: 90vmax;
@@ -980,5 +926,32 @@ h1{
       display: block;
 
   }
+  .portfolio-content {
+    align-items: center;
+    padding: 2rem;
+    height: fit-content;
+    justify-content: center;
+  }
 
+  .proj-1 {
+    padding-right: 0; /* Remove right padding */
+    margin-bottom: 2rem;
+  }
+
+  .proj-1 img {
+    height: 200px;
+    width: 280px; /* Scale down the image */
+  }
+
+  .text .heading {
+    font-size: 1.8rem; /* Reduce heading size */
+  }
+
+  .paragraph {
+    font-size: 1.2rem; /* Adjust paragraph size */
+  }
+
+  .portfolio-content .proj-1 .text button {
+    width: 120px; /* Scale down button */
+  }
 }
