@@ -28,6 +28,7 @@ header {
 
 
 /* auto-typed content */
+
 .auto-type {
   font-size: 2rem;
   color: white
@@ -36,7 +37,6 @@ header {
   border-right: 2px solid #333;
   width: 100%;
   display: inline-block;
-  animation: blink 0.7s step-end infinite;
 }
 
 @keyframes blink {
@@ -166,10 +166,10 @@ header {
 }
 
 .about-content img {
-  height: 210px;
-  width: 210px;
+  height: 370px;
+  width: 207px;
   object-fit: cover;
-  border-radius: 50%;
+  border-radius: 14%;
 }
 
 .about-content p {
@@ -739,18 +739,18 @@ header {
   }
 
   .proj-heading h1 {
-    font-size: 1.8rem; /* Scale down main heading */
+    font-size: 1.8rem; 
     margin: 2rem 0;
   }
 
   .portfolio {
-    padding: 4rem 1rem; /* Reduce padding */
+    padding: 4rem 1rem; 
   }
 
   .proj-1 img {
     height: 180px;
-    width: 100%; /* Full width for small screens */
-    max-width: 320px; /* Ensure it doesn't stretch too much */
+    width: 100%; 
+    max-width: 320px; 
   }
 
   .text .heading {
@@ -785,7 +785,11 @@ header {
   .contact-content {
     width: 100%;
   }
-}
+
+  .about-content img{
+    height: 180px;
+    width: fit-content;
+  }
 
 @media (min-width: 501px) and (max-width: 768px) {
   html {
@@ -905,6 +909,10 @@ h1{
   padding: 2rem;
   height: fit-content;
   justify-content: center;
+}
+
+.about-me{
+  height: fit-content;
 }
 
 @media (orientation: landscape) and (max-height: 500px) {
