@@ -511,53 +511,155 @@ a {
   color: var(--neon-magenta);
 }
 
-.skills-grid {
+.skills-categories {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 1.5rem 3rem;
+  gap: 1.5rem;
 }
 
-.skill-item {
-  padding: 0.5rem 0;
-}
-
-.skill-header {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 0.5rem;
-}
-
-.skill-name {
-  font-family: var(--font-heading);
-  font-size: 0.8rem;
-  color: var(--text-primary);
-  letter-spacing: 2px;
-}
-
-.skill-percent {
-  font-family: var(--font-heading);
-  font-size: 0.75rem;
-  color: var(--text-secondary);
-}
-
-.skill-bar {
-  height: 8px;
-  background: rgba(255, 255, 255, 0.05);
-  border-radius: 10px;
+.skill-category {
+  padding: 1.8rem;
+  position: relative;
   overflow: hidden;
 }
 
-.skill-fill {
-  height: 100%;
-  width: 0;
-  background: var(--bar-color);
-  border-radius: 10px;
-  box-shadow: 0 0 10px var(--bar-color), 0 0 5px var(--bar-color);
-  transition: width 1.5s ease-in-out;
+.skill-category::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--neon-cyan), var(--neon-magenta));
+  opacity: 0;
+  transition: opacity 0.4s ease;
 }
 
-.skill-fill.animated {
-  width: calc(var(--target-width) * 1%);
+.skill-category:hover::before {
+  opacity: 1;
+}
+
+.skill-category:nth-child(2)::before {
+  background: linear-gradient(90deg, var(--neon-magenta), var(--neon-purple));
+}
+
+.skill-category:nth-child(3)::before {
+  background: linear-gradient(90deg, var(--neon-purple), var(--neon-blue));
+}
+
+.skill-category:nth-child(4)::before {
+  background: linear-gradient(90deg, var(--neon-blue), var(--neon-cyan));
+}
+
+.category-title {
+  font-family: var(--font-heading);
+  font-size: 0.9rem;
+  color: var(--neon-cyan);
+  letter-spacing: 2px;
+  margin-bottom: 1.2rem;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.skill-category:nth-child(2) .category-title {
+  color: var(--neon-magenta);
+}
+
+.skill-category:nth-child(3) .category-title {
+  color: var(--neon-purple);
+}
+
+.skill-category:nth-child(4) .category-title {
+  color: var(--neon-blue);
+}
+
+.category-title i {
+  font-size: 1.1rem;
+}
+
+.skill-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+
+.skill-chip {
+  font-family: var(--font-heading);
+  font-size: 0.7rem;
+  padding: 0.45rem 1rem;
+  border: 1px solid rgba(0, 240, 255, 0.2);
+  border-radius: 50px;
+  color: var(--text-secondary);
+  letter-spacing: 1px;
+  background: rgba(0, 240, 255, 0.03);
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  cursor: default;
+}
+
+.skill-chip i {
+  font-size: 0.8rem;
+  color: var(--neon-cyan);
+  transition: color 0.3s ease;
+}
+
+.skill-chip:hover {
+  background: rgba(0, 240, 255, 0.08);
+  border-color: var(--neon-cyan);
+  color: var(--neon-cyan);
+  box-shadow: 0 0 15px rgba(0, 240, 255, 0.1);
+  transform: translateY(-2px);
+}
+
+.skill-category:nth-child(2) .skill-chip {
+  border-color: rgba(255, 0, 229, 0.2);
+  background: rgba(255, 0, 229, 0.03);
+}
+
+.skill-category:nth-child(2) .skill-chip i {
+  color: var(--neon-magenta);
+}
+
+.skill-category:nth-child(2) .skill-chip:hover {
+  background: rgba(255, 0, 229, 0.08);
+  border-color: var(--neon-magenta);
+  color: var(--neon-magenta);
+  box-shadow: 0 0 15px rgba(255, 0, 229, 0.1);
+}
+
+.skill-category:nth-child(3) .skill-chip {
+  border-color: rgba(179, 71, 255, 0.2);
+  background: rgba(179, 71, 255, 0.03);
+}
+
+.skill-category:nth-child(3) .skill-chip i {
+  color: var(--neon-purple);
+}
+
+.skill-category:nth-child(3) .skill-chip:hover {
+  background: rgba(179, 71, 255, 0.08);
+  border-color: var(--neon-purple);
+  color: var(--neon-purple);
+  box-shadow: 0 0 15px rgba(179, 71, 255, 0.1);
+}
+
+.skill-category:nth-child(4) .skill-chip {
+  border-color: rgba(67, 97, 238, 0.2);
+  background: rgba(67, 97, 238, 0.03);
+}
+
+.skill-category:nth-child(4) .skill-chip i {
+  color: var(--neon-blue);
+}
+
+.skill-category:nth-child(4) .skill-chip:hover {
+  background: rgba(67, 97, 238, 0.08);
+  border-color: var(--neon-blue);
+  color: var(--neon-blue);
+  box-shadow: 0 0 15px rgba(67, 97, 238, 0.1);
 }
 
 /* ===== JOURNEY / EDUCATION SECTION ===== */
