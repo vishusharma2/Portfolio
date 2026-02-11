@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -5,319 +6,550 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta property="og:title" content="Vishu Sharma | Web Developer & Tech Enthusiast">
-  <meta property="og:description" content="Explore my portfolio featuring web development projects, innovative solutions, and a passion for coding. Let's build something amazing together!">
-  <meta property="og:image" content="https://res.cloudinary.com/dsmgpr4am/image/upload/v1738302202/novxkoqci5mcc8nqescg.png">
+  <meta property="og:description"
+    content="Explore my portfolio featuring web development projects, innovative solutions, and a passion for coding. Let's build something amazing together!">
+  <meta property="og:image"
+    content="https://res.cloudinary.com/dsmgpr4am/image/upload/v1738302202/novxkoqci5mcc8nqescg.png">
   <meta property="og:url" content="https://vishusharma2.github.io/Portfolio">
   <meta property="og:type" content="website">
-  <title>Portfolio Code</title>
+  <title>Vishu Sharma | Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Rajdhani:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet">
   <link rel="stylesheet" href="style.css" />
-  <script src="https://kit.fontawesome.com/66aa7c98b3.js" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"
-    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 
 <body>
-  <header class="header">
-    <nav class="navbar" onmouseover="showNavbar()" onmouseout="hideNavbar()">
-      <div class="navbar-container container" id="hamburger-menu">
-        <div>
-          <h1 class="navbar-brand">Vishu Sharma</h1>
-        </div>
-        <ul class="menu-items">
-          <li><a href="#about">About</a></li>
-          <li><a href="#Education">Education</a></li>
-          <li><a href="#Achivement">Achievement</a></li>
-          <li><a href="#my-works">Portfolio</a></li>
-          <li><a href="#contact-me">Contact</a></li>
-        </ul>
+  <!-- Particle Canvas Background -->
+  <canvas id="particles"></canvas>
 
-        <!-- "Hamburger menu" / "Bar icon" to toggle the navigation links -->
-        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
-          <i class="fa fa-bars"></i>
-        </a>
+  <!-- Navbar -->
+  <nav class="navbar" id="navbar">
+    <div class="navbar-container container">
+      <a href="#home-page" class="navbar-brand">
+        <span class="brand-bracket">&lt;</span>VS<span class="brand-bracket">/&gt;</span>
+      </a>
+      <ul class="menu-items" id="nav-menu">
+        <li><a href="#about" data-text="About">About</a></li>
+        <li><a href="#Education" data-text="Education">Education</a></li>
+        <li><a href="#Achivement" data-text="Achievements">Achievements</a></li>
+        <li><a href="#my-works" data-text="Portfolio">Portfolio</a></li>
+        <li><a href="#contact-me" data-text="Contact">Contact</a></li>
+      </ul>
+      <div class="hamburger" id="hamburger" onclick="toggleMenu()">
+        <span></span>
+        <span></span>
+        <span></span>
       </div>
-    </nav>
-    
-    <div class="home-content" id="home-page">
-      <div class="name">
-        <h1 class="auto-type"></h1>
-        <p>Hi, I'm <span class="name-color"><b>Vishu Sharma</b></span></p>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <header class="header" id="home-page">
+    <div class="hero-content">
+      <div class="hero-text">
+        <p class="hero-greeting">Hello, I'm</p>
+        <h1 class="hero-name">
+          <span class="neon-text-cyan">Vishu</span>
+          <span class="neon-text-magenta">Sharma</span>
+        </h1>
+        <div class="auto-type-wrapper">
+          <span class="auto-type-prefix">&gt; </span>
+          <span class="auto-type" id="auto-type"></span>
+          <span class="cursor">|</span>
+        </div>
+        <div class="hero-cta">
+          <a href="#my-works" class="btn btn-neon-cyan">View My Work</a>
+          <a href="#contact-me" class="btn btn-neon-magenta">Contact Me</a>
+        </div>
       </div>
-      <div class="angle-down-icon">
-        <a href="#about"><img src="svg/arrow-down.svg" alt=""></a>
-      </div>
+    </div>
+    <div class="scroll-indicator">
+      <a href="#about">
+        <div class="mouse">
+          <div class="wheel"></div>
+        </div>
+        <span>Scroll Down</span>
+      </a>
     </div>
   </header>
 
-  <section class="about-me" id="about">
+  <!-- About Section -->
+  <section class="about-section" id="about">
     <div class="container">
-      <div class="about-content">
-        <div class="left-content">
-          <div>
-            <h1 class="about-heading">About Me</h1>
-          </div>
-          <img src="img/Vishuprofile.png" alt="image" />
+      <h2 class="section-title" data-reveal="fade-up">
+        <span class="title-decoration">&lt;</span>
+        About Me
+        <span class="title-decoration">/&gt;</span>
+      </h2>
+      <div class="about-grid" data-reveal="fade-up">
+        <div class="about-image-wrapper">
+          <div class="image-glow"></div>
+          <img src="img/Vishuprofile.png" alt="Vishu Sharma" class="about-image" />
+        </div>
+        <div class="about-text">
           <p>
-            Full stack web developer | Student of Computer Science and engineering at Greater Noida Institute of Technology (GNIOT) | Member of GDG | Experienced in python programming. Currently working on machine learning projects.
+            Full stack web developer & Student of Computer Science and Engineering at Greater Noida Institute of
+            Technology (GNIOT). Member of GDG, experienced in Python programming, and currently working on machine
+            learning projects.
           </p>
-          <div class="work-arrow">
-            <p>
-              <a href="#my-works">Check out my work </a>
-            </p>
+          <div class="about-tags">
+            <span class="tag">React</span>
+            <span class="tag">Node.js</span>
+            <span class="tag">Express.js</span>
+            <span class="tag">MongoDB</span>
+            <span class="tag">JWT Authentication</span>
+            <span class="tag">Socket.IO</span>
+            <span class="tag">Gemini API</span>
+            <span class="tag">Monaco</span>
+            <span class="tag">Judge0</span>
+            <span class="tag">AWS EC2</span>
+            <span class="tag">Git</span>
+            <span class="tag">GitHub</span>
+            <span class="tag">Postman</span>
+            <span class="tag">VS Code</span>
+            <span class="tag">Python</span>
+            <span class="tag">NumPy</span>
+            <span class="tag">Pandas</span>
+            <span class="tag">Matplotlib</span>
+            <span class="tag">Scikit-learn</span>
+            <span class="tag">Machine Learning</span>
+            <span class="tag">Java</span>
+            <span class="tag">DSA With Java</span>
           </div>
         </div>
-        <div class="skills">
-          <div class="right-content">
-            <div>
-              <h1 class="skills-heading">My Skills</h1>
+      </div>
+
+      <!-- Skills -->
+      <div class="skills-section" data-reveal="fade-up">
+        <h3 class="sub-title">
+          <span class="title-decoration">//</span> My Skills
+        </h3>
+        <div class="skills-grid">
+          <div class="skill-item">
+            <div class="skill-header">
+              <span class="skill-name">HTML</span>
+              <span class="skill-percent">50%</span>
             </div>
-            <div class="skills-bar">
-              <div class="bar">
-                <div class="info">
-                  <span>HTML</span>
-                </div>
-                <div class="progress-line"><span class="html"></span></div>
-                <div class="bar">
-                  <div class="info">
-                    <span>CSS</span>
-                  </div>
-                  <div class="progress-line"><span class="css"></span></div>
-                  <div class="bar">
-                    <div class="info">
-                      <span>javascript</span>
-                  <div class="progress-line"><span class="css"></span></div>
-                  <div class="bar">
-                    <div class="info">
-                      <span>React JS</span>
-                    </div>
-                    <div class="progress-line"><span class="javascript"></span></div>
-                    <div class="bar">
-                      <div class="info">
-                        <span>Python</span>
-                      </div>
-                      <div class="progress-line"><span class="Python"></span></div>
-                      <div class="bar">
-                        <div class="info">
-                          <span>Java</span>
-                        </div>
-                        <div class="progress-line"><span class="Java"></span></div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+            <div class="skill-bar">
+              <div class="skill-fill" data-width="50" style="--bar-color: #00f0ff;"></div>
+            </div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-header">
+              <span class="skill-name">CSS</span>
+              <span class="skill-percent">40%</span>
+            </div>
+            <div class="skill-bar">
+              <div class="skill-fill" data-width="40" style="--bar-color: #ff00e5;"></div>
+            </div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-header">
+              <span class="skill-name">JavaScript</span>
+              <span class="skill-percent">30%</span>
+            </div>
+            <div class="skill-bar">
+              <div class="skill-fill" data-width="30" style="--bar-color: #b347ff;"></div>
+            </div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-header">
+              <span class="skill-name">React JS</span>
+              <span class="skill-percent">30%</span>
+            </div>
+            <div class="skill-bar">
+              <div class="skill-fill" data-width="30" style="--bar-color: #4361ee;"></div>
+            </div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-header">
+              <span class="skill-name">Python</span>
+              <span class="skill-percent">50%</span>
+            </div>
+            <div class="skill-bar">
+              <div class="skill-fill" data-width="50" style="--bar-color: #00f0ff;"></div>
+            </div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-header">
+              <span class="skill-name">Java</span>
+              <span class="skill-percent">30%</span>
+            </div>
+            <div class="skill-bar">
+              <div class="skill-fill" data-width="30" style="--bar-color: #ff00e5;"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Education Section -->
+  <section class="journey-section" id="Education">
+    <div class="container">
+      <h2 class="section-title" data-reveal="fade-up">
+        <span class="title-decoration">&lt;</span>
+        My Journey
+        <span class="title-decoration">/&gt;</span>
+      </h2>
+      <div class="timeline-grid" data-reveal="fade-up">
+        <!-- Education Column -->
+        <div class="timeline-column">
+          <h3 class="column-title">
+            <i class="fas fa-graduation-cap"></i> Education
+          </h3>
+          <div class="timeline">
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <div class="timeline-card glass-card">
+                <span class="timeline-date"><i class="far fa-calendar-alt"></i> 2019–2020</span>
+                <h4>High School</h4>
+                <p>St. Mary's Christian School</p>
               </div>
             </div>
-            <div class="work-arrow-2">
-              <p>
-                <a href="#my-works">Check out my work <i class="fas fa-arrow-down"></i></a>
-              </p>
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <div class="timeline-card glass-card">
+                <span class="timeline-date"><i class="far fa-calendar-alt"></i> 2020–2023</span>
+                <h4>Diploma</h4>
+                <h5>Government Polytechnic Sonipat</h5>
+                <p>Computer Science and Engineering</p>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <div class="timeline-card glass-card">
+                <span class="timeline-date"><i class="far fa-calendar-alt"></i> 2023–2026</span>
+                <h4>Bachelor of Technology</h4>
+                <h5>Greater Noida Institute of Technology</h5>
+                <p>Computer Science and Engineering</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Experience Column -->
+        <div class="timeline-column">
+          <h3 class="column-title">
+            <i class="fas fa-briefcase"></i> Experience
+          </h3>
+          <div class="timeline">
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <div class="timeline-card glass-card">
+                <span class="timeline-date"><i class="far fa-calendar-alt"></i> Aug 2022 – Oct 2022</span>
+                <h4>Softcrayons Tech Solution Pvt. Ltd</h4>
+                <p>Python Development</p>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <div class="timeline-card glass-card">
+                <span class="timeline-date"><i class="far fa-calendar-alt"></i> May 2024 – Jun 2024</span>
+                <h4>Ediglobe</h4>
+                <p>Web Development</p>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </div>
   </section>
-  <section class="Edu" id="Education">
-    <h2 class="heading">My <span class="journey">Journey</span></h2>
-    <div class="education-row">
-        <div class="education-column">
-            <h3 class="title">Education</h3>
-            <div class="education-box">
-                <div class="education-content">
-                    <div class="content">
-                        <div class="year"><img src="svg/calendar3.svg" alt="SVG"> 2019-2020</div>
-                        <h3>High School</h3>
-                        <p>St. Mary's Christian School</p>
-                    </div>
-                </div>
 
-                <div class="education-content">
-                    <div class="content">
-                        <div class="year"><img src="svg/calendar3.svg" alt="SVG"> 2020-2023</div>
-                        <h3>Diploma</h3>
-                        <h4>Government Polytechnic Sonipat</h4>
-                        <p>Computer Science And engineering</p>
-                    </div>
-                </div>
-
-                <div class="education-content">
-                    <div class="content">
-                        <div class="year"><img src="svg/calendar3.svg" alt="SVG"> 2023-2026</div>
-                        <h3>Bachelor Of Technology</h3>
-                        <h4>Greater Noida Institute Of Technology</h4>
-                        <p>Computer Science And engineering</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="education-column">
-            <h3 class="title">Experience</h3>
-            <div class="education-box">
-                <div class="education-content">
-                    <div class="content">
-                        <div class="year"><img src="svg/calendar3.svg" alt="SVG"> August 2022- October 2022</div>
-                        <h3>Softcrayons Tech Solution Pvt. ltd</h3>
-                        <p>Python</p>
-                    </div>
-                    <div class="content">
-                        <div class="year"><img src="svg/calendar3.svg" alt="SVG"> May 2024 - June 2024</div>
-                        <h3>Ediglobe</h3>
-                        <p>Web Development</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-    </div>
-  </section>
-
-  <section class="Achiv" id="Achivement">
-    <h2 class="heading1">My <span class="ach"> Achivement</span></h2>
-    <div class="Achivement-row">
-        <div class="Achivement-column">
-            <h3 class="title">Certificate</h3>
-            <div class="Achivement-box">
-                <div class="Achivement-content">
-                    <div class="content">
-                        <div class="year"><img src="svg/calendar3.svg" alt="SVG"> October 2022</div>
-                        <h3>Softcrayons Tech Solution Pvt. ltd.</h3>
-                        <a class="cert1" href="https://drive.google.com/file/d/1wGsD-OsmYRCO03C9kRqp1YLTF_byGY5E/view">Python</a>
-                    </div>
-                </div>
-
-                <div class="Achivement-content">
-                    <div class="content">
-                        <div class="year"><img src="svg/calendar3.svg" alt="SVG"> December 2022</div>
-                        <h3>GUVI</h3>
-                        <a class="cert2" href="https://www.guvi.in/certificate?id=r3bz2m53lV631G6722">Python</a>
-                    </div>
-                </div>
-
-                <div class="Achivement-content">
-                    <div class="content">
-                        <div class="year"><img src="svg/calendar3.svg" alt="SVG"> December 2022</div>
-                        <h3>CISCO</h3>
-                        <a class="cert3" href="https://www.credly.com/badges/49dd8f83-97d4-4cf2-aa0d-fb35ad7dd818/linked_in_profile">Cybersecurity Essentials</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="Achivement-column">
-            <h3 class="title">Certificate</h3>
-            <div class="Achivement-box">
-                <div class="Achivement-content">
-                    <div class="content">
-                        <div class="year"><img src="svg/calendar3.svg" alt="SVG">July 2023</div>
-                        <h3>Johns Hopkins University</h3>
-                        <a class="cert3" href="https://www.coursera.org/account/accomplishments/verify/R47BL9GRAQVK?utm_source=link&utm_medium=certificate&utm_content=cert_image&utm_campaign=sharing_cta&utm_product=course">
-                            Web Developer
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="Achivement-box">
-                <div class="Achivement-content">
-                    <div class="content">
-                        <div class="year"><img src="svg/calendar3.svg" alt="SVG">August 2023</div>
-                        <h3>IBM</h3>
-                        <a class="cert5" href="https://www.coursera.org/account/accomplishments/verify/4XZGAYBL4V2G?utm_source=link&utm_medium=certificate&utm_content=cert_image&utm_campaign=pdf_header_button&utm_product=course">
-                            Introduction to Artificial Intelligence (AI)
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-    </div>
-  </section>
-  <section id="my-works">
-    <div class="portfolio">
-      <div class="proj-heading">
-        <h1>Portfolio</h1>
-      </div>
-      <div class="portfolio-content container">
-        <div class="proj-1">
-            <img src="img/Music_Website.png">
-          <span class="text">
-            <h2 class="heading">Music Website</h2>
-            <p class="paragraph">Build Using HTML,CSS and JS</p>
-              <button>
-                <a href="https://github.com/vishusharma2/Music_Website" target="blank">View source <i
-                    class="fas fa-external-link-alt"></i></a>
-              </button>
-              <button>
-                <a href="https://vishusharma2.github.io/Music_Website/" target="blank">Try it Live <i
-                    class="fas fa-external-link-alt"></i></a>
-              </button>
-          </span>
-        </div> 
-        <div class="proj-1">
-          <img src="img/rps.png">
-          <span class="text">
-            <h2 class="heading">RPS Game</h2>
-            <p class="paragraph">Build Using HTML,CSS,JS</p>
-            <button><a href="https://github.com/vishusharma2/Rock-ppr-Sci" target="blank">View source <i
-                  class="fas fa-external-link-alt"></i></a>
-            </button>
-            <button><a href="https://vishusharma2.github.io/Rock-ppr-Sci/" target="blank">Try it Live <i
-                  class="fas fa-external-link-alt"></i></a>
-            </button>
-          </span>
-        </div>
-
-        <div class="proj-1">
-          <img src="img/tictactoe.png">
-          <span class="text">
-            <h2 class="heading">Tic Tac Toe</h2>
-            <p class="paragraph">Build Using HTML,CSS,JS</p>
-            <button><a href="https://github.com/vishusharma2/Tic_Tac_Toe" target="blank">View source <i
-                  class="fas fa-external-link-alt"></i></a>
-            </button>
-            <button><a href="https://vishusharma2.github.io/Tic_Tac_Toe/" target="blank">Try it Live <i
-                  class="fas fa-external-link-alt"></i></a>
-            </button>
-          </span>
-        </div>
-        
-        <div class="proj-1">
-          <img src="img/todolist.png">
-          <span class="text">
-            <h2 class="heading">Tic Tac Toe</h2>
-            <p class="paragraph">Build Using HTML,CSS,JS</p>
-            <button><a href="https://github.com/vishusharma2/OCTANET_APRIL/tree/master/programming_lang/OCTANET_APRIL/ToDoList" target="blank">View source <i
-                  class="fas fa-external-link-alt"></i></a>
-            </button>
-            <button><a href="https://vishusharma2.github.io/OCTANET_APRIL/index.html" target="blank">Try it Live <i
-                  class="fas fa-external-link-alt"></i></a>
-            </button>
-          </span>
-        </div>
-    </div>
-  </section>
-  <div class="contact" id="contact-me">
+  <!-- Achievements Section -->
+  <section class="achievements-section" id="Achivement">
     <div class="container">
-      <div class="contact-content">
-        <h2>Contact Me</h2>
-        <p class="mail">
-          Get in touch with me
-        </p>
-        <p class="mail-div"><img src="svg/gmail.svg" alt="" class="mail1">vishu.sharma90861@gmail.com</p>
-        <p class="links">Or find me on:</p>
-        <a href="https://www.linkedin.com/in/vishu-sharma-514560132/" target="blank"><img src="svg/linkedin.svg" alt=""></a>
-        <a href="https://github.com/vishusharma2" target="blank"><img src="svg/github.svg" alt=""></a>
-        <a href="https://www.instagram.com/_vishu_sharma___/" target="blank"><img src="svg/instagram.svg" alt=""></a>
-        <a href="https://www.facebook.com/vishu.sharma.1441" target="blank"><img src="svg/facebook.svg" alt=""></a>
+      <h2 class="section-title" data-reveal="fade-up">
+        <span class="title-decoration">&lt;</span>
+        Achievements
+        <span class="title-decoration">/&gt;</span>
+      </h2>
+      <div class="achievements-grid" data-reveal="fade-up">
+        <div class="achievement-card glass-card">
+          <div class="achievement-icon"><i class="fas fa-certificate"></i></div>
+          <span class="achievement-date"><i class="far fa-calendar-alt"></i> October 2022</span>
+          <h4>Softcrayons Tech Solution Pvt. Ltd.</h4>
+          <a href="https://drive.google.com/file/d/1wGsD-OsmYRCO03C9kRqp1YLTF_byGY5E/view" target="_blank"
+            class="cert-link">Python <i class="fas fa-external-link-alt"></i></a>
+        </div>
+        <div class="achievement-card glass-card">
+          <div class="achievement-icon"><i class="fas fa-certificate"></i></div>
+          <span class="achievement-date"><i class="far fa-calendar-alt"></i> December 2022</span>
+          <h4>GUVI</h4>
+          <a href="https://www.guvi.in/certificate?id=r3bz2m53lV631G6722" target="_blank" class="cert-link">Python <i
+              class="fas fa-external-link-alt"></i></a>
+        </div>
+        <div class="achievement-card glass-card">
+          <div class="achievement-icon"><i class="fas fa-shield-alt"></i></div>
+          <span class="achievement-date"><i class="far fa-calendar-alt"></i> December 2022</span>
+          <h4>CISCO</h4>
+          <a href="https://www.credly.com/badges/49dd8f83-97d4-4cf2-aa0d-fb35ad7dd818/linked_in_profile" target="_blank"
+            class="cert-link">Cybersecurity Essentials <i class="fas fa-external-link-alt"></i></a>
+        </div>
+        <div class="achievement-card glass-card">
+          <div class="achievement-icon"><i class="fas fa-code"></i></div>
+          <span class="achievement-date"><i class="far fa-calendar-alt"></i> July 2023</span>
+          <h4>Johns Hopkins University</h4>
+          <a href="https://www.coursera.org/account/accomplishments/verify/R47BL9GRAQVK" target="_blank"
+            class="cert-link">Web Developer <i class="fas fa-external-link-alt"></i></a>
+        </div>
+        <div class="achievement-card glass-card">
+          <div class="achievement-icon"><i class="fas fa-robot"></i></div>
+          <span class="achievement-date"><i class="far fa-calendar-alt"></i> August 2023</span>
+          <h4>IBM</h4>
+          <a href="https://www.coursera.org/account/accomplishments/verify/4XZGAYBL4V2G" target="_blank"
+            class="cert-link">Introduction to AI <i class="fas fa-external-link-alt"></i></a>
+        </div>
       </div>
     </div>
-  </div>
-  <!-- JAVASCRIPT -->
+  </section>
+
+  <!-- Portfolio Section -->
+  <section class="portfolio-section" id="my-works">
+    <div class="container">
+      <h2 class="section-title" data-reveal="fade-up">
+        <span class="title-decoration">&lt;</span>
+        Portfolio
+        <span class="title-decoration">/&gt;</span>
+      </h2>
+      <p class="section-subtitle" data-reveal="fade-up">Here are some of my recent projects</p>
+      <div class="projects-grid" data-reveal="fade-up">
+
+        <div class="project-card glass-card coming-soon-card">
+          <div class="project-image coming-soon-image">
+            <div class="coming-soon-placeholder">
+              <i class="fas fa-rocket coming-soon-icon"></i>
+              <span class="coming-soon-badge">Coming Soon</span>
+            </div>
+          </div>
+          <div class="project-info">
+            <h3>WearVerse</h3>
+            <p>Something exciting is in the works. Stay tuned!</p>
+            <div class="project-tech">
+              <span>Coming Soon</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card glass-card">
+          <div class="project-image">
+            <img src="img/code-view.png" alt="code-view">
+            <div class="project-overlay">
+              <div class="project-links">
+                <a href="https://github.com/vishusharma2/CodeView-with-AI" target="_blank" class="project-link"><i
+                    class="fab fa-github"></i></a>
+                <a href="https://www.code-view.in/" target="_blank" class="project-link"><i
+                    class="fas fa-external-link-alt"></i></a>
+              </div>
+            </div>
+          </div>
+          <div class="project-info">
+            <h3>CodeView with AI</h3>
+            <p>Built with React.js, Node.js, Express.js, MongoDB, JWT Authentication, Socket.IO, Gemini API , Monaco,
+              Judge0, AWS EC2 , WebRTC</p>
+            <div class="project-tech">
+              <span>React.js</span><span>Node.js</span><span>Express.js</span><span>MongoDB</span><span>Socket.IO</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card glass-card">
+          <div class="project-image">
+            <img src="img/nova-Ai.png" alt="nova-Ai">
+            <div class="project-overlay">
+              <div class="project-links">
+                <a href="https://github.com/vishusharma2/Nova-Ai" target="_blank" class="project-link"><i
+                    class="fab fa-github"></i></a>
+                <a href="https://nova-ai-nine.vercel.app/login" target="_blank" class="project-link"><i
+                    class="fas fa-external-link-alt"></i></a>
+              </div>
+            </div>
+          </div>
+          <div class="project-info">
+            <h3>Nova Ai</h3>
+            <p>Built with React.js, Node.js, Express.js, MongoDB, JWT Authentication </p>
+            <div class="project-tech">
+              <span>React.js</span><span>Node.js</span><span>Express.js</span><span>MongoDB</span><span>JWT
+                Authentication</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card glass-card">
+          <div class="project-image">
+            <img src="img/airbnb.png" alt="Airbnb Clone">
+            <div class="project-overlay">
+              <div class="project-links">
+                <a href="https://github.com/vishusharma2/Airbnb-full-version" target="_blank" class="project-link"><i
+                    class="fab fa-github"></i></a>
+                <a href="https://airbnb-full-version.onrender.com/" target="_blank" class="project-link"><i
+                    class="fas fa-external-link-alt"></i></a>
+              </div>
+            </div>
+          </div>
+          <div class="project-info">
+            <h3>Airbnb Clone</h3>
+            <p>Built with Node.js, Express.js, React.js, MongoDB</p>
+            <div class="project-tech">
+              <span>Node.js</span><span>Express.js</span><span>MongoDB</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card glass-card">
+          <div class="project-image">
+            <img src="img/Myntra.png" alt="Myntra Clone">
+            <div class="project-overlay">
+              <div class="project-links">
+                <a href="https://github.com/vishusharma2/Myntra-Clone" target="_blank" class="project-link"><i
+                    class="fab fa-github"></i></a>
+                <a href="https://myntra-clone-rsn9.vercel.app/" target="_blank" class="project-link"><i
+                    class="fas fa-external-link-alt"></i></a>
+              </div>
+            </div>
+          </div>
+          <div class="project-info">
+            <h3>Myntra Clone</h3>
+            <p>Built with React.js,Node.js,Express.js</p>
+            <div class="project-tech">
+              <span>React.js</span><span>Node.js</span><span>Express.js</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card glass-card">
+          <div class="project-image">
+            <img src="img/todolist.png" alt="ToDo List">
+            <div class="project-overlay">
+              <div class="project-links">
+                <a href="https://github.com/vishusharma2/OCTANET_APRIL/tree/master/programming_lang/OCTANET_APRIL/ToDoList"
+                  target="_blank" class="project-link"><i class="fab fa-github"></i></a>
+                <a href="https://vishusharma2.github.io/OCTANET_APRIL/index.html" target="_blank"
+                  class="project-link"><i class="fas fa-external-link-alt"></i></a>
+              </div>
+            </div>
+          </div>
+          <div class="project-info">
+            <h3>ToDo List</h3>
+            <p>Built with HTML, CSS &amp; JavaScript</p>
+            <div class="project-tech">
+              <span>HTML</span><span>CSS</span><span>JS</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card glass-card">
+          <div class="project-image">
+            <img src="img/tictactoe.png" alt="Tic Tac Toe">
+            <div class="project-overlay">
+              <div class="project-links">
+                <a href="https://github.com/vishusharma2/Tic_Tac_Toe" target="_blank" class="project-link"><i
+                    class="fab fa-github"></i></a>
+                <a href="https://vishusharma2.github.io/Tic_Tac_Toe/" target="_blank" class="project-link"><i
+                    class="fas fa-external-link-alt"></i></a>
+              </div>
+            </div>
+          </div>
+          <div class="project-info">
+            <h3>Tic Tac Toe</h3>
+            <p>Built with HTML, CSS &amp; JavaScript</p>
+            <div class="project-tech">
+              <span>HTML</span><span>CSS</span><span>JS</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card glass-card">
+          <div class="project-image">
+            <img src="img/rps.png" alt="RPS Game">
+            <div class="project-overlay">
+              <div class="project-links">
+                <a href="https://github.com/vishusharma2/Rock-ppr-Sci" target="_blank" class="project-link"><i
+                    class="fab fa-github"></i></a>
+                <a href="https://vishusharma2.github.io/Rock-ppr-Sci/" target="_blank" class="project-link"><i
+                    class="fas fa-external-link-alt"></i></a>
+              </div>
+            </div>
+          </div>
+          <div class="project-info">
+            <h3>RPS Game</h3>
+            <p>Built with HTML, CSS &amp; JavaScript</p>
+            <div class="project-tech">
+              <span>HTML</span><span>CSS</span><span>JS</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card glass-card">
+          <div class="project-image">
+            <img src="img/Music_Website.png" alt="Music Website">
+            <div class="project-overlay">
+              <div class="project-links">
+                <a href="https://github.com/vishusharma2/Music_Website" target="_blank" class="project-link"><i
+                    class="fab fa-github"></i></a>
+                <a href="https://vishusharma2.github.io/Music_Website/" target="_blank" class="project-link"><i
+                    class="fas fa-external-link-alt"></i></a>
+              </div>
+            </div>
+          </div>
+          <div class="project-info">
+            <h3>Music Website</h3>
+            <p>Built with HTML, CSS &amp; JavaScript</p>
+            <div class="project-tech">
+              <span>HTML</span><span>CSS</span><span>JS</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="contact-section" id="contact-me">
+    <div class="container">
+      <h2 class="section-title" data-reveal="fade-up">
+        <span class="title-decoration">&lt;</span>
+        Contact Me
+        <span class="title-decoration">/&gt;</span>
+      </h2>
+      <div class="contact-content" data-reveal="fade-up">
+        <p class="contact-subtitle">Let's build something amazing together</p>
+        <a href="mailto:vishu.sharma90861@gmail.com" class="contact-email">
+          <i class="fas fa-envelope"></i>
+          vishu.sharma90861@gmail.com
+        </a>
+        <p class="contact-or">Or find me on</p>
+        <div class="social-links">
+          <a href="https://www.linkedin.com/in/vishu-sharma-514560132/" target="_blank" class="social-icon"
+            aria-label="LinkedIn">
+            <i class="fab fa-linkedin-in"></i>
+          </a>
+          <a href="https://github.com/vishusharma2" target="_blank" class="social-icon" aria-label="GitHub">
+            <i class="fab fa-github"></i>
+          </a>
+          <a href="https://www.instagram.com/_vishu_sharma___/" target="_blank" class="social-icon"
+            aria-label="Instagram">
+            <i class="fab fa-instagram"></i>
+          </a>
+          <a href="https://www.facebook.com/vishu.sharma.1441" target="_blank" class="social-icon"
+            aria-label="Facebook">
+            <i class="fab fa-facebook-f"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>&copy; 2026 Vishu Sharma. Crafted with <span class="neon-text-magenta">&hearts;</span></p>
+  </footer>
+
   <script src="app.js"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
 </body>
 
 </html>
